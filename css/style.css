@@ -1,0 +1,137 @@
+body{
+	margin: 0px;
+	background-color: #393646;
+	color: #fff;
+}
+
+
+.header-container{
+	background-color: #4F4557;
+	text-align: center;
+	padding: 1em;
+	margin-top: 5rem;
+	margin-bottom: 2rem;
+	border-radius: 0.3em;
+}
+
+
+/*General tasks*/
+.tasks{
+	background-color: #6D5D6E;
+	padding: 3rem;
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	border-radius: 0.3em;
+}
+
+
+/*the line under the list*/
+.task{
+	position: relative;
+	margin-bottom: 1.5rem;
+}
+.task::after{
+	content: "";
+	height: 1px;
+	background: currentColor;
+	position:absolute;
+	display: inline-flex;
+	bottom: -30%;
+	right: 0;
+	left: 0;
+	opacity: 0.5;
+}
+
+
+/*label and strike*/
+.task label{
+	cursor: pointer;
+	line-height: 2.2em;
+	font-size: 1.2rem;
+	position: relative;
+}
+[type="checkbox"]:checked + label{
+	opacity: 0.5;
+}
+
+.task label::after{
+	content: "";
+	height: 2px;
+	background: currentColor;
+	position: absolute;
+	top: 50%;
+	display: flex;
+	left: 0;
+	right: 0;
+	margin-left: 3.1rem;
+	transform: scalex(0);
+	transition: transform 150ms ease-in-out;
+}
+[type="checkbox"]:checked + label::after{
+	transform: scaleX(1);
+	transform-origin: left;
+}
+
+
+/*Cleared checkbox*/
+[type="checkbox"]{
+	opacity: 0;
+	position: absolute;
+}
+
+
+/*Current checkbox*/
+.radio_mark{
+	content: ;
+	border: 2px solid currentColor;
+	width: 1.1rem;
+	height: 1.1rem;
+	display: inline-block;
+	border-radius: 50%;
+	margin-right: 2rem;
+	cursor: pointer;
+
+	transform: scale(1);
+	transition: 5ms ease-in-out;
+}
+
+
+/*checkbox animation*/
+[type="checkbox"]:checked + label .radio_mark{
+	background: #393646;
+	border: 0;
+	box-shadow: inset 0 4px;
+}
+[type="checkbox"]:hover + label .radio_mark{
+	transform: scale(1.3);
+}
+
+
+/*add button and input space*/
+.add{
+	display: flex;
+	justify-content: center;
+}
+
+.add button{
+	font-size: 2em;
+	font-weight: 900;
+	background-color: transparent;
+	border: 0; 
+	color: #fff;
+	cursor: pointer;
+}
+.add button:hover{
+	opacity: 0.5;
+	transform: scale(1.2);
+}
+.add input{
+	background-color: transparent;
+	border: 0;
+	border-bottom:2px solid #fff;
+	color: #fff;
+	padding: 0.5rem;
+	padding-left: 1em;
+	width: 75%;
+	cursor: pointer;
+}
